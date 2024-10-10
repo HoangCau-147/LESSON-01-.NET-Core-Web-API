@@ -1,6 +1,7 @@
 using api.Models; // Để sử dụng MongoDbSettings
 using api.Data;   // Để sử dụng MongoDBContext
-using Microsoft.Extensions.Options; // Để sử dụng IOptions
+using Microsoft.Extensions.Options;
+using Microsoft.EntityFrameworkCore; // Để sử dụng IOptions
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,9 +11,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // database
-// Đọc cấu hình MongoDB từ appsettings.json
-builder.Services.Configure<Database>(
-    builder.Configuration.GetSection("Database"));
+builder.Services.AddDbContext<ApplicationDBContext>(options =>  {
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+});
 
 var app = builder.Build();
 
