@@ -1,21 +1,19 @@
-using MongoDB.Bson;
-using MongoDB.Bson.Serialization.Attributes;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace api.Models;
-
-public class Comment
+namespace api.Models
 {
-    [BsonId]
-    [BsonRepresentation(BsonType.ObjectId)]
-    public string? Id { get; set; }
-    
-    public string Title { get; set; } = null!;
-
-    public string Content { get; set; } = null!;
-
-    public DateTime CreateOn { get; set; } = DateTime.Now;
-
-    public int? StockId { get; set; }
-
-    public Stock? Stock { get; set; }
+    [Table("Comments")]
+    public class Comment
+    {
+        public int Id { get; set; }
+        public string Title { get; set; } = string.Empty;
+        public string Content { get; set; } = string.Empty;
+        public DateTime CreatedOn { get; set; } = DateTime.Now;
+        public int? StockId { get; set; }
+        public Stock? Stock { get; set; }
+    }
 }
