@@ -1,0 +1,103 @@
+[33mcommit da79c4646c1fe97f6ccaa25cb9934ef92a9c8f22[m[33m ([m[1;36mHEAD -> [m[1;32m05/add-create-update-delete-apis[m[33m)[m
+Author: CẦU HOÀNG VĂN <hoangcau14783@gmail.com>
+Date:   Fri Oct 11 17:47:24 2024 +0700
+
+    - Implemented API endpoints for adding, updating, and deleting stocks.
+    - Created UpdateDTO and CreateDTO for handling input data in Create and
+    Update operations.
+    - Added Mapper for mapping between Stock model and CreateDTO in Create
+      method.
+    - Improved data validation and error handling for Stock operations.
+
+[33mcommit 1d55af4bcb71743fda8a8d30b960a91aaaacc22b[m[33m ([m[1;31morigin/develop[m[33m, [m[1;32mdevelop[m[33m)[m
+Merge: dd9f586 2d516b7
+Author: Hoàng Văn Cầu <75608239+HoangCau-147@users.noreply.github.com>
+Date:   Thu Oct 10 23:48:44 2024 +0700
+
+    Merge pull request #10 from HoangCau-147/04/add-DTO
+    
+    #9-feat: Add DTOs and Mappers for data conversion
+
+[33mcommit 2d516b74885b2bc2ca308b3ddc21c0dd0553340a[m
+Author: CẦU HOÀNG VĂN <hoangcau14783@gmail.com>
+Date:   Thu Oct 10 23:47:45 2024 +0700
+
+    #9-feat: Add DTOs and Mappers for data conversion
+    
+    Implemented DTOs to decouple domain models from external layers. Added Mappers for converting data between DTOs and domain models, ensuring proper encapsulation and separation of concerns
+
+[33mcommit dd9f586cb6f77babef2c7733ee7f5cd52228f132[m
+Merge: e5e5344 b81d2cb
+Author: Hoàng Văn Cầu <75608239+HoangCau-147@users.noreply.github.com>
+Date:   Thu Oct 10 23:05:49 2024 +0700
+
+    Merge pull request #8 from HoangCau-147/03/add-controllers
+    
+    #7-feat: Create Controllers
+
+[33mcommit b81d2cb2005d1a4a0a16f1e04d8fe1bc28e92512[m
+Author: CẦU HOÀNG VĂN <hoangcau14783@gmail.com>
+Date:   Thu Oct 10 23:04:37 2024 +0700
+
+    #7-feat: Create Controllers
+
+[33mcommit e5e5344c6b4285d1bd637503ca2d4fde12a2c2cb[m
+Merge: e928fc3 76c9130
+Author: Hoàng Văn Cầu <75608239+HoangCau-147@users.noreply.github.com>
+Date:   Thu Oct 10 18:14:05 2024 +0700
+
+    Merge pull request #6 from HoangCau-147/hotfix/recode-2connect-sqlserver
+    
+    #5-feat: Change configuration from using mongodb to sql server
+
+[33mcommit 76c913056012933e8140df610c61bece5e1f5780[m
+Author: CẦU HOÀNG VĂN <hoangcau14783@gmail.com>
+Date:   Thu Oct 10 18:12:52 2024 +0700
+
+    #5-feat: Change configuration from using mongodb to sql server
+    
+    Change files in Model and ApplicationDbContext configuration in Data, also missing connection to sql server in appsettings.json and program.cs
+
+[33mcommit e928fc3793cae08732ceab140499779f7bd7092f[m
+Merge: eb02a8c 78a2b36
+Author: Hoàng Văn Cầu <75608239+HoangCau-147@users.noreply.github.com>
+Date:   Wed Oct 9 23:33:03 2024 +0700
+
+    Merge pull request #3 from HoangCau-147/01/connect-mongo-database
+    
+    #2-Feat: Set up MongoDB connection
+
+[33mcommit 78a2b367da9d244d2ec5949b35736756405fa1a5[m
+Author: CẦU HOÀNG VĂN <hoangcau14783@gmail.com>
+Date:   Wed Oct 9 23:32:04 2024 +0700
+
+    #2-Feat: Set up MongoDB connection
+    
+    Established the connection to MongoDB in the application. Added MongoDBContext and configured it in appsettings.json to manage database connectivity.
+
+[33mcommit eb02a8ceb9b8609a4399a04e56d97121e4355a09[m
+Merge: 026af4b 4f792fc
+Author: Hoàng Văn Cầu <75608239+HoangCau-147@users.noreply.github.com>
+Date:   Wed Oct 9 22:45:08 2024 +0700
+
+    Merge pull request #2 from HoangCau-147/01/add-model
+    
+    #1-feat: add initial models
+
+[33mcommit 4f792fc441eadb9bdd05b6c9f60f9fdc74798ab2[m
+Author: CẦU HOÀNG VĂN <hoangcau14783@gmail.com>
+Date:   Wed Oct 9 22:39:41 2024 +0700
+
+    feat: add initial models
+
+[33mcommit 026af4b5334b2994f41115bac6da13fff4b04a42[m
+Author: CẦU HOÀNG VĂN <hoangcau14783@gmail.com>
+Date:   Fri Oct 4 22:06:31 2024 +0700
+
+    create project + install
+
+[33mcommit 5bc8f207a9eec29eb8d9157b0d28841dacf60daa[m
+Author: CẦU HOÀNG VĂN <hoangcau14783@gmail.com>
+Date:   Fri Oct 4 18:06:18 2024 +0700
+
+    first commit
