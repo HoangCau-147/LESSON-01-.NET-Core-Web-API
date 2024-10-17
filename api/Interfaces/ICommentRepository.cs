@@ -9,5 +9,8 @@ namespace api.Interfaces
     public interface ICommentRepository
     {
         Task<List<Comment>> GetAllAsync();   
+        Task<Comment?> GetByIDAsync(int id);
+
+        Task<Comment> CreateAsync(Comment commentModel);
     }
 }
