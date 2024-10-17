@@ -53,7 +53,33 @@ namespace api.Controllers
 
             var commentModel = commentDTO.ToCommentFromCreate(stockId);
             await _commentRepo.CreateAsync(commentModel);
-            return CreatedAtAction(nameof(GetById), new {id = commentModel}, commentModel.ToCommentDTO());
+            return CreatedAtAction(nameof(GetById), new {id = commentModel.Id}, commentModel.ToCommentDTO());
+        }
+
+        [HttpPut]
+        [Route("{id}")]
+        public async Task<IActionResult> Update ([FromRoute] int id, [FromBody] UpdateCommentRequestDTO updateDTO)
+        {
+            var comment = await _commentRepo.UpdateAsync(id, updateDTO.ToCommentFromUpdate());
+
+            if(comment == null)
+            {
+                return NotFound("Comment not found");
+            }
+
+            return Ok(comment.ToCommentDTO());
+        }
+
+        [HttpDelete]
+        [Route("{id}")]
+        public async Task<IActionResult> Delete ([FromRoute] int id)
+        {
+            var commentModel = await _commentRepo.DeleteAsync(id);
+
+            if(commentModel == null)
+                return NotFound("Comment does not exist");
+
+            return Ok(commentModel);
         }
     }
 }
