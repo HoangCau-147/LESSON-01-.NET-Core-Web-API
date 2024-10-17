@@ -11,6 +11,13 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddControllers().AddNewtonsoftJson(
+    options => 
+    {
+        options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+    }
+);
+
 // database
 builder.Services.AddDbContext<ApplicationDBContext>(options =>  {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
