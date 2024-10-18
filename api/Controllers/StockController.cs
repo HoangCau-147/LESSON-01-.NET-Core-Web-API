@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using api.Data;
 using api.DTOs.Stock;
+using api.Helpers;
 using api.Interfaces;
 using api.Mappers;
 using Microsoft.AspNetCore.Mvc;
@@ -27,12 +28,12 @@ namespace api.Controllers
 
         // list all row of stocks table
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetAll([FromQuery] QueryObject query )
         {
             if(!ModelState.IsValid)
                 return BadRequest(ModelState);
                 
-            var stocks = await _stockRepo.GetAllAsync();
+            var stocks = await _stockRepo.GetAllAsync(query);
             var stockDTO = stocks.Select(s=>s.ToStockDTO());
             return Ok(stocks);
         }
