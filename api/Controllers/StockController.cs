@@ -7,6 +7,7 @@ using api.DTOs.Stock;
 using api.Helpers;
 using api.Interfaces;
 using api.Mappers;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -28,6 +29,7 @@ namespace api.Controllers
 
         // list all row of stocks table
         [HttpGet]
+        [Authorize]
         public async Task<IActionResult> GetAll([FromQuery] QueryObject query )
         {
             if(!ModelState.IsValid)
